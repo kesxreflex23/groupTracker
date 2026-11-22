@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Group Tracker — Tasks</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Group Tracker</h1>
+    <p class="tagline">Keep your group task and deadline visible</p>
+
+    <div class="role-switch" role="group" aria-label="Choose your view">
+      <button type="button" id="role-student" class="role-btn" aria-pressed="true">Student</button>
+      <button type="button" id="role-tutor" class="role-btn" aria-pressed="false">Tutor</button>
+    </div>
+    <p id="tutor-notice" class="tutor-notice hidden">
+      Viewing as tutor — demo only, no real login in version one.
+    </p>
+  </header>
+
+  <main class="page">
+    <!-- Add-task form -->
+    <form id="add-task-form" class="card">
+      <h2>Add a task</h2>
+      <label for="task-title">Task title</label>
+      <input type="text" id="task-title" name="task-title"
+             placeholder="e.g. Draft slides" maxlength="80" autocomplete="off">
+
+      <label for="task-deadline">Deadline</label>
+      <input type="date" id="task-deadline" name="task-deadline">
+
+      <p id="form-error" class="error hidden" role="alert"></p>
+
+      <button type="submit" class="btn btn-primary">Add task</button>
+    </form>
+
+    <!-- Task list -->
+    <section class="card" aria-labelledby="list-heading">
+      <h2 id="list-heading">Tasks</h2>
+      <!-- Shown while stored data is being read -->
+      <p id="loading" class="muted">Loading…</p>
+      <!-- Shown when there are no tasks -->
+      <p id="empty-state" class="muted hidden">
+        No tasks yet — add your first one above.
+      </p>
+      <!-- Shown if reading saved data fails -->
+      <p id="load-error" class="error hidden" role="alert"></p>
+      <ul id="task-list" class="task-list"></ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Saved in this browser only (demo — version one).</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

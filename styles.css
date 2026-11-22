@@ -1,0 +1,272 @@
+/* Mobile-first: base styles target phones, media query widens for desktop. */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 16px;
+  color: #1f2430;
+  background: #f6f7fb;
+}
+
+/* ---- Header ---- */
+.topbar {
+  background: #3b5bdb;
+  color: #ffffff;
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.tagline {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* ---- Layout ---- */
+.page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 16px;
+  display: grid;
+  gap: 16px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 1.15rem;
+}
+
+/* ---- Form ---- */
+form label {
+  display: block;
+  font-weight: 600;
+  margin: 12px 0 4px;
+}
+
+form label:first-of-type {
+  margin-top: 0;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #c5cad4;
+  border-radius: 8px;
+}
+
+form input:focus {
+  outline: 2px solid #3b5bdb;
+  border-color: #3b5bdb;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  min-height: 44px; /* comfortable tap target on phones */
+  padding: 10px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #3b5bdb;
+  color: #ffffff;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background: #3149b5;
+}
+
+/* ---- Task list ---- */
+.task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.task-item {
+  border: 1px solid #e2e6ee;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.task-title {
+  font-weight: 700;
+  margin: 0;
+}
+
+.task-deadline {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  color: #5b6272;
+}
+
+/* ---- Status badges: words AND colour (accessibility rule) ---- */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 999px;
+}
+
+.badge-todo {
+  background: #e9ecf3;
+  color: #5b6272;
+}
+
+.badge-inprogress {
+  background: #ffe8d9;
+  color: #e8590c;
+}
+
+.badge-done {
+  background: #e6f6ea;
+  color: #2f9e44;
+}
+
+.task-done .task-title {
+  text-decoration: line-through;
+  color: #5b6272;
+}
+
+.btn-secondary {
+  background: #e9ecf3;
+  color: #3b5bdb;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.btn-secondary:hover {
+  background: #d8dded;
+}
+
+.task-owner {
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+  color: #5b6272;
+}
+
+/* ---- Roles demo (Student / Tutor) ---- */
+.role-switch {
+  margin-top: 12px;
+  display: inline-flex;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.role-btn {
+  min-height: 44px;
+  padding: 8px 18px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.role-btn.role-active {
+  background: #ffffff;
+  color: #3b5bdb;
+}
+
+.tutor-notice {
+  margin: 10px auto 0;
+  max-width: 480px;
+  background: #e8590c;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+/* Tutor view: make progress easier to scan at a glance. */
+body.tutor-view .task-item {
+  border-left: 5px solid #c5cad4;
+}
+
+body.tutor-view .task-item:has(.badge-inprogress) {
+  border-left-color: #e8590c;
+}
+
+body.tutor-view .task-item:has(.badge-done) {
+  border-left-color: #2f9e44;
+}
+
+/* ---- Deadline urgency: words AND colour ---- */
+.urgent {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 999px;
+  margin-left: 4px;
+}
+
+.urgent-overdue {
+  background: #ffe3e3;
+  color: #c92a2a;
+}
+
+.urgent-soon {
+  background: #ffe8d9;
+  color: #e8590c;
+}
+
+/* ---- Messages / states ---- */
+.muted {
+  color: #5b6272;
+}
+
+.error {
+  color: #c92a2a;
+  font-weight: 600;
+  margin: 12px 0 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.footer {
+  text-align: center;
+  color: #5b6272;
+  font-size: 0.85rem;
+  padding: 16px;
+}
+
+/* ---- Desktop: constrain width and soften edges ---- */
+@media (min-width: 640px) {
+  .topbar {
+    padding: 28px 16px;
+  }
+
+  .page {
+    padding: 24px 16px;
+  }
+}
