@@ -10,4 +10,4 @@ Updated after every Mission Card.
 | 2 | Pick up / complete tasks | 🔨 Built 2026-11-22, awaiting Kesava's self-test | Badges To do/In progress/Done + Pick up/Mark done buttons; red-team fix: error & empty no longer show together. Syntax check passed. |
 | 3 | Roles demo | ✅ Done 2026-11-22 | Kesava's self-test passed. Student/Tutor switch, tutor notice + colour-coded edges, role persists. |
 | 4 | Mobile + deadlines polish | ✅ Done 2026-11-22 | Kesava's self-test passed. Overdue/Due soon labels, words AND colour. |
-| 5 | Docs wrap-up | 🔨 Built 2026-11-22, awaiting Kesava's GitHub push | README.md + ARCHITECTURE.md created; GitHub steps given to Kesava. |
+| 5 | Docs wrap-up | ✅ Done 2026-11-22 | README.md + ARCHITECTURE.md created. Code pushed to https://github.com/kesxreflex23/groupTracker (main branch). |
